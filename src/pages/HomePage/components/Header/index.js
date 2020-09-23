@@ -5,11 +5,15 @@ import account from "./assets/person-sharp.svg";
 import orders from "./assets/document-text-sharp.svg";
 import cart from "./assets/cart-sharp.svg";
 import search from "./assets/search.svg";
-import "./style.css";
+import "../../style.css";
 export const Header = () => {
   return (
     <header className="header-root">
-      <MenuItem onClick={() => {}} icon={settings} title="" />
+      <MenuItem
+        onClick={() => {}}
+        icon={settings}
+        title=""
+      />
       <div className="search-area">
         <div className="search">
           <input type="text" className="search-text-field" />

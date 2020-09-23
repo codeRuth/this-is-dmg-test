@@ -7,9 +7,7 @@ export const MenuItem = ({ icon, title, badge, onClick }) => {
         {badge instanceof Boolean ? "" : badge}
       </span>
       <img src={icon} alt={title} className="icon" />
-      <div className="menu-item-text">
-        {title ? title : <span>&nbsp;</span>}
-      </div>
+      <div className="menu-item-text">{title !== "" ? title : <></>}</div>
     </div>
   );
 };
