@@ -1,0 +1,36 @@
+.icon {
+  height: 24px;
+  width: 24px;
+}
+
+.badge {
+  background-color: #ffa500;
+  border: 2px solid white;
+  border-radius: 16px;
+  padding: 4px;
+  position: absolute;
+  top: 4px;
+  left: 28px;
+  font-size: 8px;
+}
+
+.badge::before{
+
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 8px;
+  position: relative;
+  margin-right: 8px;
+}
+
+.menu-item-text {
+  margin-top: 4px;
+  font-size: 12px!important;
+  color: gray;
+}
