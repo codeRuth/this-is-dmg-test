@@ -5,7 +5,7 @@ import cart from "./assets/cart.svg";
 import inStock from "./assets/in-stock.svg";
 import lowStock from "./assets/low-stock.svg";
 import outOfStock from "./assets/out-of-stock.svg";
-
+import notifBell from "./assets/notifications-sharp.svg";
 export const ProductCardList = ({
   variant,
   featuredText,
@@ -35,7 +35,11 @@ export const ProductCardList = ({
         <div className="card-detail">
           <span className="card-name">{name}</span>
           {stampShown ? (
-            <img src={stamp} style={{ marginRight: 16 }} alt="stamp" />
+            <img
+              src={stamp}
+              style={{ marginRight: 16, width: 42 }}
+              alt="stamp"
+            />
           ) : (
             <></>
           )}
@@ -43,7 +47,9 @@ export const ProductCardList = ({
             <p>{productCode}</p>
             <p>{productFor}</p>
           </div>
-          <div className="card-detail-stock">
+          <div
+            className="card-detail-stock"
+          >
             <p>
               Stock
               <img
@@ -51,6 +57,21 @@ export const ProductCardList = ({
                 src={getStockStatus(stock)}
                 alt="stock-status"
               />
+            </p>
+            <p
+              style={
+                stock > 0 && stock < 10
+                  ? { fontWeight: "bold" }
+                  : stock === 0
+                  ? { fontWeight: "bold", color: "#8E1216" }
+                  : {}
+              }
+            >
+              {stock > 0 && stock < 10
+                ? `${stock} Tires Left`
+                : stock === 0
+                ? "Back in 1 week!"
+                : ""}
             </p>
           </div>
           <div className="card-detail-price">
@@ -80,12 +101,14 @@ export const ProductCardList = ({
               Total<span>₪{price * quantity}</span>
             </p>
           </div>
-          <div
-            className="add-to-cart-container"
-          >
-            <div className="add-to-card-button">
-              <img src={cart} />
-              <span>Add to Cart</span>
+          <div className="add-to-cart-container">
+            <div
+              className={`add-to-card-button ${
+                stock === 0 ? "out-of-stock" : ""
+              }`}
+            >
+              <img alt="stock-status" src={stock === 0 ? notifBell : cart} />
+              <span>{stock === 0 ? "Notify Me" : "Add to Cart"}</span>
             </div>
           </div>
         </div>

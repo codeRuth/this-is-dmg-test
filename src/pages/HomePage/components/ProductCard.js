@@ -5,6 +5,7 @@ import cart from "./assets/cart.svg";
 import inStock from "./assets/in-stock.svg";
 import lowStock from "./assets/low-stock.svg";
 import outOfStock from "./assets/out-of-stock.svg";
+import notifBell from "./assets/notifications-sharp.svg";
 
 export const ProductCard = ({
   variant,
@@ -28,6 +29,7 @@ export const ProductCard = ({
       return outOfStock;
     }
   };
+
   return variant === "featured" ? (
     <div>
       <div className="featured-title">
@@ -62,7 +64,9 @@ export const ProductCard = ({
             </div>
             <div className="card-cart">
               <p>Total</p>
-              <h4>₪{price * quantity}</h4>
+              <p style={{ fontWeight: "bold", fontSize: 14 }}>
+                ₪{price * quantity}
+              </p>
             </div>
           </div>
           <div className="card-footer">
@@ -86,9 +90,13 @@ export const ProductCard = ({
               </span>
             </div>
             <div style={{ display: "flex", flexShrink: 1 }}>
-              <div className="add-to-card-button">
-                <img src={cart} />
-                <span>Add to Cart</span>
+              <div
+                className={`add-to-card-button ${
+                  stock === 0 ? "out-of-stock" : ""
+                }`}
+              >
+                <img alt="icon" src={stock === 0 ? notifBell : cart} />
+                <span>{stock === 0 ? "Notify Me" : "Add to Cart"}</span>
               </div>
             </div>
           </div>
