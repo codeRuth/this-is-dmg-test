@@ -43,6 +43,7 @@ export const ProductCardList = ({
           ) : (
             <></>
           )}
+          <div className="break"/>
           <div className="card-detail-code">
             <p>{productCode}</p>
             <p>{productFor}</p>
@@ -74,32 +75,34 @@ export const ProductCardList = ({
                 : ""}
             </p>
           </div>
+          <div className="break"/>
           <div className="card-detail-price">
             <p>Price ₪{price}</p>
-          </div>
-          <div className="cart-quantity-rocker">
-            <span
-              onClick={() =>
-                setQuantity((quantity) =>
-                  quantity === 1 ? quantity : quantity - 1
-                )
-              }
-              className="rocker"
-            >
-              -
-            </span>
-            <span className="quantity">{quantity}</span>
-            <span
-              onClick={() => setQuantity((quantity) => quantity + 1)}
-              className="rocker"
-            >
-              +
-            </span>
           </div>
           <div className="card-cart">
             <p>
               Total<span>₪{price * quantity}</span>
             </p>
+          </div>
+          <div className="break"/>
+          <div className="cart-quantity-rocker">
+            <span
+                onClick={() =>
+                    setQuantity((quantity) =>
+                        quantity === 1 ? quantity : quantity - 1
+                    )
+                }
+                className="rocker"
+            >
+              -
+            </span>
+            <span className="quantity">{quantity}</span>
+            <span
+                onClick={() => setQuantity((quantity) => quantity + 1)}
+                className="rocker"
+            >
+              +
+            </span>
           </div>
           <div className="add-to-cart-container">
             <div

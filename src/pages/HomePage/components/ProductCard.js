@@ -6,6 +6,7 @@ import inStock from "./assets/in-stock.svg";
 import lowStock from "./assets/low-stock.svg";
 import outOfStock from "./assets/out-of-stock.svg";
 import notifBell from "./assets/notifications-sharp.svg";
+import { useMediaQuery } from "./util";
 
 export const ProductCard = ({
   variant,
@@ -20,7 +21,7 @@ export const ProductCard = ({
   stampShown,
 }) => {
   const [quantity, setQuantity] = useState(1);
-
+  // const isTablet = useMediaQuery("(min-width: 768px)", true, false);
   const getStockStatus = (stock_val) => {
     if (stock_val > 10) return inStock;
     else if (stock_val > 0 && stock_val < 10) {
@@ -43,7 +44,11 @@ export const ProductCard = ({
           <span className="card-name">{name}</span>
           <div className="card-product">
             {stampShown ? (
-              <img src={stamp} style={{ marginRight: 16 }} alt="stamp" />
+              <img
+                src={stamp}
+                style={{ marginRight: 16, width: 42 }}
+                alt="stamp"
+              />
             ) : (
               <></>
             )}
@@ -51,6 +56,7 @@ export const ProductCard = ({
               <p>{productCode}</p>
               <p>{productFor}</p>
             </div>
+            <div className="break" />
             <div className="card-detail-stock">
               <p>
                 Stock{" "}
@@ -69,6 +75,7 @@ export const ProductCard = ({
               </p>
             </div>
           </div>
+          <div className="break" />
           <div className="card-footer">
             <div className="cart-quantity-rocker">
               <span

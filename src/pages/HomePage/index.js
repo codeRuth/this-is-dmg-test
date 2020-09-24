@@ -148,7 +148,7 @@ function HomePage() {
             ))}
           </div>
         </div>
-        <div className="load-more">
+        <div className="load-more" style={{ marginTop: 24 }}>
           Load More Results
         </div>
       </section>
