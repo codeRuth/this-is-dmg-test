@@ -104,12 +104,12 @@ function HomePage() {
             ))}
           </div>
           <div className="sort">
-            <select className="sort-select" name="sort" id="cars">
+            <select className="sort-select" name="sort">
               {sortOptions.map((val) => (
                 <option value={val.id}>{val.name}</option>
               ))}
             </select>
-            <span style={{ marginTop: 4, marginRight: 6 }}>
+            <span>
               Sort By&nbsp;:&nbsp;
             </span>
           </div>

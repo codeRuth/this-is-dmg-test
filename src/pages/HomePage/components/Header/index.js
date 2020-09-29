@@ -13,25 +13,19 @@ export const Header = () => {
   return (
     <header className="header-root">
       <MenuItem onClick={() => {}} icon={settings} title="" />
-      {isTablet ? (
-        <div className="search-area">
-          <div className="search">
-            <input type="text" className="search-text-field" />
-            <div className="search-button">
-              <img src={search} className="search-icon" alt="search" />
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div style={{ flexGrow: 1, display: "flex" }}>
-          <div
-            className="search-button"
-            style={{ marginTop: 8, marginLeft: "auto", marginRight: 8 }}
-          >
+      <div className="search-area">
+        <div className="search">
+          <input type="text" className="search-text-field" />
+          <div className="search-button">
             <img src={search} className="search-icon" alt="search" />
           </div>
         </div>
-      )}
+      </div>
+      <div className="search-button-area">
+        <div className="search-button">
+          <img src={search} className="search-icon" alt="search" />
+        </div>
+      </div>
       <div className="right-actions">
         <MenuItem onClick={() => {}} icon={account} title="Account" />
         <MenuItem onClick={() => {}} icon={orders} title="Orders" />

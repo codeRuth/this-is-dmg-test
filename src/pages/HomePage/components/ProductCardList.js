@@ -37,13 +37,12 @@ export const ProductCardList = ({
           {stampShown ? (
             <img
               src={stamp}
-              style={{ marginRight: 16, width: 42 }}
+              style={{ width: 42 }}
               alt="stamp"
             />
           ) : (
             <></>
           )}
-          <div className="break"/>
           <div className="card-detail-code">
             <p>{productCode}</p>
             <p>{productFor}</p>
